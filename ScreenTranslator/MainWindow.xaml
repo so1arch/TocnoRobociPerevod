@@ -1,0 +1,29 @@
+<Window x:Class="ScreenTranslator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Screen Translator" Height="230" Width="420"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Background="#1E1E2E">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Экранный Переводчик (Real-time)" Foreground="White" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,15">
+            <ComboBox x:Name="WindowComboBox" Width="280" Height="32" VerticalContentAlignment="Center"/>
+            <Button x:Name="RefreshButton" Content="🔄" Width="35" Height="32" Margin="10,0,0,0" Click="RefreshButton_Click" Background="#313244" Foreground="White" BorderThickness="0"/>
+        </StackPanel>
+
+        <Button x:Name="ToggleButton" Grid.Row="2" Content="Запустить перевод" Height="40" Background="#A6E3A1" Foreground="#11111B" FontWeight="Bold" FontSize="14" Click="ToggleButton_Click" BorderThickness="0">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>
